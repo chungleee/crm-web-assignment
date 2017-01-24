@@ -7,3 +7,7 @@ get '/' do
   @crm_app_name = "Leon's CRM"
   erb :index
 end
+
+get '/contacts' do
+  erb :contacts
+end
