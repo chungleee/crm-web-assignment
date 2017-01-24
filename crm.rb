@@ -6,9 +6,9 @@ require 'sinatra'
 
 # fake date
 
-Contact.create('Leon', 'Chung', 'leon@bitmaker.com', 'pingpong champ')
-Contact.create('Honey', 'Baby', 'dogs@montreal.com', 'dogs of montreal')
-Contact.create('Web', 'Dev', 'webdev@code.com', 'jr')
+# Contact.create('Leon', 'Chung', 'leon@bitmaker.com', 'pingpong champ')
+# Contact.create('Honey', 'Baby', 'dogs@montreal.com', 'dogs of montreal')
+# Contact.create('Web', 'Dev', 'webdev@code.com', 'jr')
 
 
 get '/' do
@@ -22,4 +22,9 @@ end
 
 get '/contacts/new_contact' do
   erb :new_contact
+end
+
+post '/contacts' do
+  Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
+  redirect to('/contacts')
 end
