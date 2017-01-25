@@ -6,17 +6,18 @@ require 'sinatra'
 
 # fake date
 
-# Contact.create('Leon', 'Chung', 'leon@bitmaker.com', 'pingpong champ')
-# Contact.create('Honey', 'Baby', 'dogs@montreal.com', 'dogs of montreal')
-# Contact.create('Web', 'Dev', 'webdev@code.com', 'jr')
+Contact.create('Leon', 'Chung', 'leon@bitmaker.com', 'pingpong champ')
+Contact.create('Honey', 'Baby', 'dogs@montreal.com', 'dogs of montreal')
+Contact.create('Web', 'Dev', 'webdev@code.com', 'jr')
 
 
 get '/' do
-  @crm_app_name = "Leon's CRM"
+  # @crm_app_name = "Leon's CRM"
   erb :index
 end
 
 get '/contacts' do
+  @count = Contact.all.count
   erb :contacts
 end
 

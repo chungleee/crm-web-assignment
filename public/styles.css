@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 0;
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+}
+
+
+.app_name {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 1px;
+}
+
+
+.menu_option {
+  background-color: lightgray;
+  padding: 5px;
+  margin: 1px 0;
+}
+
+.contact_list {
+  background-color: turquoise;
+  font-weight: bold;
+  text-align: left;
+  margin: 10px;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left:20px;
+}
+
+.buttons {
+  font-weight: normal;
+}
+
+.counter {
+  background-color: orange;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
