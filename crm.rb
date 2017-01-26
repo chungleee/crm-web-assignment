@@ -7,8 +7,8 @@ require 'sinatra'
 # fake date
 
 Contact.create('Leon', 'Chung', 'leon@bitmaker.com', 'pingpong champ')
-Contact.create('Honey', 'Baby', 'dogs@montreal.com', 'dogs of montreal')
-Contact.create('Web', 'Dev', 'webdev@code.com', 'jr')
+# Contact.create('Honey', 'Baby', 'dogs@montreal.com', 'dogs of montreal')
+# Contact.create('Web', 'Dev', 'webdev@code.com', 'jr')
 
 
 get '/' do
@@ -30,6 +30,11 @@ post '/contacts' do
   redirect to('/contacts')
 end
 
-after do
-  ActiveRecord::Base.connection.close
+get '/contacts/1' do
+  @contact = Contact.find(1)
+  erb :show_contact
 end
+
+# after do
+#   ActiveRecord::Base.connection.close
+# end
