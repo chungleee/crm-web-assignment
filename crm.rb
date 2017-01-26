@@ -6,9 +6,9 @@ require 'sinatra'
 
 # fake date
 
-Contact.create('Leon', 'Chung', 'leon@bitmaker.com', 'pingpong champ')
-Contact.create('Honey', 'Baby', 'dogs@montreal.com', 'dogs of montreal')
-Contact.create('Web', 'Dev', 'webdev@code.com', 'jr')
+# Contact.create('Leon', 'Chung', 'leon@bitmaker.com', 'pingpong champ')
+# Contact.create('Honey', 'Baby', 'dogs@montreal.com', 'dogs of montreal')
+# Contact.create('Web', 'Dev', 'webdev@code.com', 'jr')
 
 
 get '/' do
@@ -53,6 +53,15 @@ get '/contacts/:id/edit' do
   end
 end
 
+delete '/contacts/:id' do
+  @contact = Contact.find(params[:id].to_i)
+  if @contact
+    @contact.delete
+    redirect to('/contacts')
+  else
+    raise Sinatra::NotFound
+  end
+end
 # after do
 #   ActiveRecord::Base.connection.close
 # end
