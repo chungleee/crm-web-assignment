@@ -62,6 +62,8 @@ delete '/contacts/:id' do
     raise Sinatra::NotFound
   end
 end
-# after do
-#   ActiveRecord::Base.connection.close
-# end
+
+
+after do
+  ActiveRecord::Base.connection.close
+end
